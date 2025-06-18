@@ -131,10 +131,3 @@ LOGIN_REDIRECT_URL = 'home'  # Redirect to home page after login
 LOGOUT_REDIRECT_URL = 'home'  # Redirect to home page after logout
 LOGIN_URL = 'login'  # The URL where the login view is located
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' # Or your email provider's SMTP host
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'johannes.m.tekle@gmail.com' # Your full email address
-EMAIL_HOST_PASSWORD = '12345678' # Your email password or app-specific password
-DEFAULT_FROM_EMAIL = 'johannes.m.tekle@gmail.com' # The email address that appears as the sender
