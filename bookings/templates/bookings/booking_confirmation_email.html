@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <p>Dear {{ booking.user.username }},</p>
+    <p>Thank you for your booking at our restaurant!</p>
+    <p>Your booking details are as follows:</p>
+    <ul>
+        <li><strong>Booking ID:</strong> {{ booking.id }}</li>
+        <li><strong>Date:</strong> {{ booking.booking_date|date:"F j, Y" }}</li>
+        <li><strong>Time:</strong> {{ booking.booking_time|time:"h:i A" }}</li>
+        <li><strong>Number of Guests:</strong> {{ booking.number_of_guests }}</li>
+        <li><strong>Table:</strong> Table {{ booking.table.number }} (Capacity: {{ booking.table.capacity }})</li>
+        <li><strong>Status:</strong> {{ booking.get_status_display }}</li>
+        {% if booking.notes %}
+            <li><strong>Notes:</strong> {{ booking.notes }}</li>
+        {% endif %}
+    </ul>
+    <p>We look forward to seeing you!</p>
+    <p>Sincerely,</p>
+    <p>The Restaurant Team</p>
+    <p>A PDF confirmation is attached to this email for your records.</p>
+</body>
+</html>
